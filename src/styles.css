@@ -62,33 +62,33 @@
    3. FONT FACES
    ============================================================= */
     /* Inter */
-      @font-face { font-family: 'FontBl';  src: url('/assets/fonts/Inter/Inter-Black.woff2') format('woff2'); }
+      @font-face { font-family: 'FontBl';  src: url('../assets/fonts/Inter/Inter-Black.woff2') format('woff2'); }
       @font-face { font-family: 'FontBlI'; src: url('../assets/fonts/Inter/Inter-BlackItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontEB';  src: url('/assets/fonts/Inter/Inter-ExtraBold.woff2') format('woff2'); }
-      @font-face { font-family: 'FontEBI'; src: url('/assets/fonts/Inter/Inter-ExtraBoldItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontB';   src: url('/assets/fonts/Inter/Inter-Bold.woff2') format('woff2'); }
-      @font-face { font-family: 'FontBI';  src: url('/assets/fonts/Inter/Inter-BoldItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontSB';  src: url('/assets/fonts/Inter/Inter-SemiBold.woff2') format('woff2'); }
-      @font-face { font-family: 'FontSBI'; src: url('/assets/fonts/Inter/Inter-SemiBoldItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontM';   src: url('/assets/fonts/Inter/Inter-Medium.woff2') format('woff2'); }
-      @font-face { font-family: 'FontMI';  src: url('/assets/fonts/Inter/Inter-MediumItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontR';   src: url('/assets/fonts/Inter/Inter-Regular.woff2') format('woff2'); }
-      @font-face { font-family: 'FontI';   src: url('/assets/fonts/Inter/Inter-Italic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontL';   src: url('/assets/fonts/Inter/Inter-Light.woff2') format('woff2'); }
-      @font-face { font-family: 'FontLI';  src: url('/assets/fonts/Inter/Inter-LightItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontEL';  src: url('/assets/fonts/Inter/Inter-ExtraLight.woff2') format('woff2'); }
-      @font-face { font-family: 'FontELI'; src: url('/assets/fonts/Inter/Inter-ExtraLightItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontT';   src: url('/assets/fonts/Inter/Inter-Thin.woff2') format('woff2'); }
-      @font-face { font-family: 'FontTI';  src: url('/assets/fonts/Inter/Inter-ThinItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontEB';  src: url('../assets/fonts/Inter/Inter-ExtraBold.woff2') format('woff2'); }
+      @font-face { font-family: 'FontEBI'; src: url('../assets/fonts/Inter/Inter-ExtraBoldItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontB';   src: url('../assets/fonts/Inter/Inter-Bold.woff2') format('woff2'); }
+      @font-face { font-family: 'FontBI';  src: url('../assets/fonts/Inter/Inter-BoldItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontSB';  src: url('../assets/fonts/Inter/Inter-SemiBold.woff2') format('woff2'); }
+      @font-face { font-family: 'FontSBI'; src: url('../assets/fonts/Inter/Inter-SemiBoldItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontM';   src: url('../assets/fonts/Inter/Inter-Medium.woff2') format('woff2'); }
+      @font-face { font-family: 'FontMI';  src: url('../assets/fonts/Inter/Inter-MediumItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontR';   src: url('../assets/fonts/Inter/Inter-Regular.woff2') format('woff2'); }
+      @font-face { font-family: 'FontI';   src: url('../assets/fonts/Inter/Inter-Italic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontL';   src: url('../assets/fonts/Inter/Inter-Light.woff2') format('woff2'); }
+      @font-face { font-family: 'FontLI';  src: url('../assets/fonts/Inter/Inter-LightItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontEL';  src: url('../assets/fonts/Inter/Inter-ExtraLight.woff2') format('woff2'); }
+      @font-face { font-family: 'FontELI'; src: url('../assets/fonts/Inter/Inter-ExtraLightItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontT';   src: url('../assets/fonts/Inter/Inter-Thin.woff2') format('woff2'); }
+      @font-face { font-family: 'FontTI';  src: url('../assets/fonts/Inter/Inter-ThinItalic.woff2') format('woff2'); }
 
     /* Recoleta */
-      @font-face { font-family: 'RecBl'; src: url('/assets/fonts/Recoleta/Recoleta Black.woff2') format('woff2'); }
-      @font-face { font-family: 'RecB';  src: url('/assets/fonts/Recoleta/Recoleta Bold.woff2') format('woff2'); }
-      @font-face { font-family: 'RecSB'; src: url('/assets/fonts/Recoleta/Recoleta SemiBold.woff2') format('woff2'); }
-      @font-face { font-family: 'RecM';  src: url('/assets/fonts/Recoleta/Recoleta Medium.woff2') format('woff2'); }
-      @font-face { font-family: 'RecR';  src: url('/assets/fonts/Recoleta/Recoleta Regular.woff2') format('woff2'); }
-      @font-face { font-family: 'RecL';  src: url('/assets/fonts/Recoleta/Recoleta Light.woff2') format('woff2'); }
-      @font-face { font-family: 'RecT';  src: url('/assets/fonts/Recoleta/Recoleta Thin.woff2') format('woff2'); }
+      @font-face { font-family: 'RecBl'; src: url('../assets/fonts/Recoleta/Recoleta Black.woff2') format('woff2'); }
+      @font-face { font-family: 'RecB';  src: url('../assets/fonts/Recoleta/Recoleta Bold.woff2') format('woff2'); }
+      @font-face { font-family: 'RecSB'; src: url('../assets/fonts/Recoleta/Recoleta SemiBold.woff2') format('woff2'); }
+      @font-face { font-family: 'RecM';  src: url('../assets/fonts/Recoleta/Recoleta Medium.woff2') format('woff2'); }
+      @font-face { font-family: 'RecR';  src: url('../assets/fonts/Recoleta/Recoleta Regular.woff2') format('woff2'); }
+      @font-face { font-family: 'RecL';  src: url('../assets/fonts/Recoleta/Recoleta Light.woff2') format('woff2'); }
+      @font-face { font-family: 'RecT';  src: url('../assets/fonts/Recoleta/Recoleta Thin.woff2') format('woff2'); }
 
 
 /* =============================================================
