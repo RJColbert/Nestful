@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nestful</title>
+  <link rel="stylesheet" href="src/styles.css">
+  <script src="src/js/content.js" charset="utf-8" defer></script>
+  <script src="src/js/script.js" charset="utf-8" defer></script>
+</head>
+<body>
+
+<div class="prototype-wrap">
+
+  <div class="phone" id="phone">
+    <div class="phone-notch"></div>
+
+    <div class="status-bar" id="status-bar">
+      <div class="status-icon">
+        <svg viewBox="0 0 24 24"><rect x="1" y="16" width="4" height="6" rx="1"/><rect x="7" y="11" width="4" height="11" rx="1"/><rect x="13" y="6" width="4" height="16" rx="1"/><rect x="19" y="1" width="4" height="21" rx="1"/></svg>
+      </div>
+      <div class="status-icon">
+        <svg viewBox="0 0 24 24"><path d="M1.5 8.5C5.5 4.5 10.5 2.5 12 2.5s6.5 2 10.5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4.5 11.5C7 9 9.5 8 12 8s5 1 7.5 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7.5 14.5C9 13 10.5 12.5 12 12.5s3 .5 4.5 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="18" r="1.5"/></svg>
+      </div>
+      <div class="status-icon battery">
+        <svg viewBox="0 0 24 24"><rect x="1" y="7" width="18" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="19" y="10" width="3" height="4" rx="1"/><rect x="2.5" y="8.5" width="13" height="7" rx="1"/></svg>
+      </div>
+    </div>
+
+    <div class="app-header is-hidden" id="app-header">
+      <div class="app-header-icn"></div>
+      <div class="app-header-home-name" id="app-header-home-name"></div>
+      <!-- <div class="settings-icon"></div> -->
+    </div>
+
+    <div class="screens" id="screens">
+
+<!-- ============================================
+ONBOARDING
+============================================ -->
+  <div class="ob-outer" id="ob-outer">
+
+  <!-- Shared header — hidden on step 1, JS populates title & sub -->
+    <div class="ob-header is-hidden" id="ob-header">
+      <div class="ob-title" id="ob-title"></div>
+      <div class="ob-sub"   id="ob-sub"></div>
+    </div>
+
+  <!-- ===== OB-1: WELCOME ===== -->
+    <div class="ob-logo-wrap ob-screen active" id="screen-ob-1">
+      <div class="welcome_overlay">
+        <div class="ob-logo"></div>
+        <div class="ob-tagline"     data-text="ob1_tagline"></div>
+        <div class="ob-tagline-sub" data-text="ob1_tagline_sub"></div>
+      </div>
+    </div>
+
+  <!-- ===== OB-2: HOME NAME, TYPE & LOCATION ===== -->
+    <div class="ob-body ob-screen" id="screen-ob-2">
+
+      <div class="ob-section-label first" data-text="ob2_label_name"></div>
+      <input class="text-input" type="text" id="ob2-name" placeholder="e.g. Our Perfect Nest">
+      <div class="hint" data-text="ob2_name_hint"></div>
+
+      <div class="ob-section-label" data-text="ob2_label_type"></div>
+
+      <div class="card list">
+        <div class="radio-card" data-radio-group="ob2-type">
+          <div class="focus-card-top">
+            <div class="radio-dot"></div>
+            <div class="radio-label" data-text="ob2_type_house"></div>
+          </div>
+          <div class="focus-desc" data-text="ob2_sub_house"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="radio-card" data-radio-group="ob2-type">
+          <div class="focus-card-top">
+            <div class="radio-dot"></div>
+            <div class="radio-label" data-text="ob2_type_condo"></div>
+          </div>
+          <div class="focus-desc" data-text="ob2_sub_condo"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="radio-card" data-radio-group="ob2-type">
+          <div class="focus-card-top">
+            <div class="radio-dot"></div>
+            <div class="radio-label" data-text="ob2_type_town"></div>
+          </div>
+          <div class="focus-desc" data-text="ob2_sub_town"></div>
+        </div>
+
+      </div>
+
+      <div class="ob-section-label" data-text="ob2_label_location"></div>
+      <input class="text-input" type="text" id="ob2-location" placeholder="Zip code" inputmode="numeric" pattern="[0-9]*" maxlength="5">
+      <div class="hint" data-text="ob2_location_hint"></div>
+      <div class="input-error is-hidden" id="ob2-location-error" data-text="location_error"></div>
+   
+    </div>
+
+  <!-- ===== OB-3: YARD SIZE ===== -->
+    <div class="ob-body ob-screen" id="screen-ob-3">
+
+      <div class="ob-section-label first" data-text="ob3_label_size"></div>
+
+      <div class="card list">
+
+        <div class="radio-card" data-radio-group="ob3-yard" data-yard="none">
+          <div class="focus-card-top">
+            <div class="radio-dot"></div>
+            <div class="radio-label" data-text="ob3_yard_none"></div>
+          </div>
+          <div class="radio-sub" data-text="ob3_yard_none_sub"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="radio-card" data-radio-group="ob3-yard" data-yard="small">
+          <div class="focus-card-top">
+            <div class="radio-dot"></div>
+            <div class="radio-label" data-text="ob3_yard_small"></div>
+          </div>
+          <div class="radio-sub" data-text="ob3_yard_small_sub"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="radio-card" data-radio-group="ob3-yard" data-yard="medium">
+          <div class="focus-card-top">
+            <div class="radio-dot"></div>
+            <div class="radio-label" data-text="ob3_yard_med"></div>
+          </div>
+          <div class="radio-sub" data-text="ob3_yard_med_sub"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="radio-card" data-radio-group="ob3-yard" data-yard="large">
+          <div class="focus-card-top">
+            <div class="radio-dot"></div>
+            <div class="radio-label" data-text="ob3_yard_large"></div>
+          </div>
+          <div class="radio-sub" data-text="ob3_yard_large_sub"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="radio-card" data-radio-group="ob3-yard" data-yard="acreage">
+          <div class="focus-card-top">
+            <div class="radio-dot"></div>
+            <div class="radio-label" data-text="ob3_yard_acreage"></div>
+          </div>
+          <div class="radio-sub" data-text="ob3_yard_acreage_sub"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  <!-- ===== OB-4: MAP YOUR HOME ===== -->
+    <div class="ob-body ob-screen" id="screen-ob-4">
+
+      <div class="ob-section-label first" data-text="ob4_label_levels"></div>
+      <div id="ob4-levels"></div>
+      <!-- <div class="hint" data-text="ob4_hint"></div> -->
+
+    </div>
+
+  <!-- ===== OB-5: EQUIPMENT & FEATURES ===== -->
+    <div class="ob-body ob-screen" id="screen-ob-5">
+
+      <div class="ob-section-label first" data-text="ob5_label_indoors"></div>
+
+      <div class="card list">
+
+        <div class="check-card">
+          <div class="focus-card-top">
+            <div class="check-box"></div>
+            <div class="radio-label" data-text="ob5_label_id1"></div>
+          </div>
+          <div class="focus-desc" data-text="ob5_sub_id1"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="check-card">
+          <div class="focus-card-top">
+            <div class="check-box"></div>
+            <div class="radio-label" data-text="ob5_label_id2"></div>
+          </div>
+          <div class="focus-desc" data-text="ob5_sub_id2"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="check-card">
+          <div class="focus-card-top">
+            <div class="check-box"></div>
+            <div class="radio-label" data-text="ob5_label_id3"></div>
+          </div>
+          <div class="focus-desc" data-text="ob5_sub_id3"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="check-card">
+          <div class="focus-card-top">
+            <div class="check-box"></div>
+            <div class="radio-label" data-text="ob5_label_id4"></div>
+          </div>
+          <div class="focus-desc" data-text="ob5_sub_id4"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="check-card">
+          <div class="focus-card-top">
+            <div class="check-box"></div>
+            <div class="radio-label" data-text="ob5_label_id5"></div>
+          </div>
+          <div class="focus-desc" data-text="ob5_sub_id5"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="check-card">
+          <div class="focus-card-top">
+            <div class="check-box"></div>
+            <div class="radio-label" data-text="ob5_label_id6"></div>
+          </div>
+          <div class="focus-desc" data-text="ob5_sub_id6"></div>
+        </div>
+
+      </div>
+
+      <!-- Outdoor section — fades when "No yard" is chosen -->
+      <div id="ob5-outdoor-section">
+
+        <div class="ob-section-label small" data-text="ob5_label_oudoors"></div>
+
+        <div class="card list">
+
+          <div class="check-card">
+            <div class="focus-card-top">
+              <div class="check-box"></div>
+              <div class="radio-label" data-text="ob5_label_lawn"></div>
+            </div>
+            <div class="focus-desc" data-text="ob5_sub_lawn"></div>
+          </div>
+
+          <div class="floor-divider"></div>
+
+          <div class="check-card">
+            <div class="focus-card-top">
+              <div class="check-box"></div>
+              <div class="radio-label" data-text="ob5_label_garden"></div>
+            </div>
+            <div class="focus-desc" data-text="ob5_sub_garden"></div>
+          </div>
+
+          <div class="floor-divider"></div>
+
+          <div class="check-card">
+            <div class="focus-card-top">
+              <div class="check-box"></div>
+              <div class="radio-label" data-text="ob5_label_mower"></div>
+            </div>
+            <div class="focus-desc" data-text="ob5_sub_mower"></div>
+          </div>
+
+          <div class="floor-divider"></div>
+
+          <div class="check-card">
+            <div class="focus-card-top">
+              <div class="check-box"></div>
+              <div class="radio-label" data-text="ob5_label_snow"></div>
+            </div>
+            <div class="focus-desc" data-text="ob5_sub_snow"></div>
+          </div>
+
+          <div class="floor-divider"></div>
+
+          <div class="check-card">
+            <div class="focus-card-top">
+              <div class="check-box"></div>
+              <div class="radio-label" data-text="ob5_label_irrigation"></div>
+            </div>
+            <div class="focus-desc" data-text="ob5_sub_irrigation"></div>
+          </div>
+
+          <div class="floor-divider"></div>
+
+          <div class="check-card">
+            <div class="focus-card-top">
+              <div class="check-box"></div>
+              <div class="radio-label" data-text="ob5_label_pool"></div>
+            </div>
+            <div class="focus-desc" data-text="ob5_sub_pool"></div>
+          </div>
+        
+        </div>
+
+      </div>
+
+    </div>
+
+  <!-- ===== OB-6: FOCUS AREAS ===== -->
+    <div class="ob-body ob-screen" id="screen-ob-6">
+
+      <div class="ob-section-label first" data-text="ob6_label"></div>
+
+      <div class="card list">
+
+        <div class="focus-card">
+          <div class="focus-card-top">
+            <div class="focus-faux-check"></div>
+            <div class="focus-name" data-text="ob6_focus_projects"></div>
+          </div>
+          <div class="focus-desc" data-text="ob6_focus_projects_desc"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="focus-card">
+          <div class="focus-card-top">
+            <div class="focus-faux-check"></div>
+            <div class="focus-name" data-text="ob6_focus_maintenance"></div>
+          </div>
+          <div class="focus-desc" data-text="ob6_focus_maintenance_desc"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="focus-card">
+          <div class="focus-card-top">
+            <div class="focus-faux-check"></div>
+            <div class="focus-name" data-text="ob6_focus_materials"></div>
+          </div>
+          <div class="focus-desc" data-text="ob6_focus_materials_desc"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <!-- Garden focus — fades when "No yard" is chosen -->
+        <div class="focus-card" id="ob6-garden-card">
+          <div class="focus-card-top">
+            <div class="focus-faux-check"></div>
+            <div class="focus-name" data-text="ob6_focus_garden"></div>
+          </div>
+          <div class="focus-desc" data-text="ob6_focus_garden_desc"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  <!-- ===== OB-7: CALENDAR PREFERENCES ===== -->
+    <div class="ob-body ob-screen" id="screen-ob-7">
+
+      <div class="ob-section-label first" data-text="ob7_label_remind"></div>
+      
+      <div class="card list">
+
+        <div class="cal-pref-card" data-radio-group="ob7-remind" data-remind="all">
+          <div class="cal-pref-top">
+            <div class="radio-dot"></div>
+            <div class="cal-pref-name" data-text="ob7_remind_all"></div>
+          </div>
+          <div class="cal-pref-sub" data-text="ob7_remind_all_sub"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="cal-pref-card" data-radio-group="ob7-remind" data-remind="less">
+          <div class="cal-pref-top">
+            <div class="radio-dot"></div>
+            <div class="cal-pref-name" data-text="ob7_remind_less"></div>
+          </div>
+          <div class="cal-pref-sub" data-text="ob7_remind_less_sub"></div>
+        </div>
+
+        <div class="floor-divider"></div>
+
+        <div class="cal-pref-card" data-radio-group="ob7-remind" data-remind="none">
+          <div class="cal-pref-top">
+            <div class="radio-dot"></div>
+            <div class="cal-pref-name" data-text="ob7_remind_none"></div>
+          </div>
+          <div class="cal-pref-sub" data-text="ob7_remind_none_sub"></div>
+        </div>
+
+      </div>
+
+      <!-- Calendar section — dimmed when "No reminders" is chosen -->
+      <div class="ob-cal-dimmed" id="ob7-cal-section">
+
+        <div class="ob-section-label" data-text="ob7_label_cal"></div>
+
+        <div class="card list">
+
+          <div class="cal-pref-card cal-sub" data-radio-group="ob7-cal">
+            <div class="cal-pref-top">
+              <div class="radio-dot"></div>
+              <div class="cal-pref-name" data-text="ob7_cal_dedicated"></div>
+            </div>
+            <div class="cal-pref-sub" data-text="ob7_cal_dedicated_sub"></div>
+          </div>
+
+          <div class="floor-divider"></div>
+
+          <div class="cal-pref-card cal-sub" data-radio-group="ob7-cal">
+            <div class="cal-pref-top">
+              <div class="radio-dot"></div>
+              <div class="cal-pref-name" data-text="ob7_cal_google"></div>
+            </div>
+            <div class="cal-pref-sub" data-text="ob7_cal_google_sub"></div>
+          </div>
+        </div>
+
+       </div> 
+
+    </div>
+
+  <!-- Shared footer: progress dots + back/next + secondary link -->
+    <div class="ob-footer" id="ob-footer">
+      <div class="ob-progress">
+        <div class="ob-pip" data-dot="2"></div>
+        <div class="ob-pip" data-dot="3"></div>
+        <div class="ob-pip" data-dot="4"></div>
+        <div class="ob-pip" data-dot="5"></div>
+        <div class="ob-pip" data-dot="6"></div>
+        <div class="ob-pip" data-dot="7"></div>
+      </div>
+      <div class="ob-btn-row">
+        <button class="ob-back-btn is-hidden" id="ob-back-btn" aria-label="Back">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="fab" id="ob-next-btn"></button>
+      </div>
+      <div class="ob-skip" id="ob-secondary-link"></div>
+    </div>
+
+    </div>
+
+  <!-- Sign-in modal — slides up as sheet -->
+    <div class="sheet-modal" id="signin-modal">
+      <div class="sheet">
+        <div class="sheet-handle"></div>
+        <div class="sheet-title" data-text="si_signin"></div>
+        <div class="sheet-sub" data-text="si_welcome"></div>
+        <input class="text-input light" type="email"    id="signin-email"    placeholder="Email address"  autocomplete="email">
+        <input class="text-input light" type="password" id="signin-password" placeholder="Password"       autocomplete="current-password">
+        <button class="sign-in-btn" id="signin-submit-btn" data-text="si_signin"></button>
+        <div class="foot-picker" id="signin-cancel-btn" data-text="cancel"></div>
+      </div>
+    </div>
+
+  <!-- Shared picker sheet — used for level picker, room picker, action sheets, confirms, tag editor, etc. -->
+    <div class="sheet-modal" id="picker-modal">
+      <div class="sheet" id="picker-sheet">
+        <div class="sheet-handle"></div>
+        <div class="sheet-title" id="picker-title"></div>
+        <div class="sheet-sub" id="picker-sub"></div>
+        <div id="picker-body"></div>
+        <div id="picker-footer"></div>
+      </div>
+    </div>
+
+
+<!-- ============================================
+DASHBOARD
+============================================ -->
+  <div class="screen" id="screen-dashboard">
+
+    <div class="screen-header">
+      <div class="greeting"     data-text="dash_greeting"></div>
+      <div class="greeting-sub" data-text="dash_greeting_sub"></div>
+    </div>
+
+    <div class="screen-body">
+
+      <div class="section-flex">
+
+        <div class="dash-img"></div>
+
+        <div class="dash-card projects" data-navigate="screen-projects">
+          <div class="row">
+            <div class="dash-stat-label" data-text="projects"></div>
+            <div class="arrow"></div>
+          </div>
+          <div class="row gap-3">
+            <div class="dash-sub"id="dash-num-projects">2</div>
+            <div class="dash-sub" data-text="dash_label_projects"></div>
+          </div>
+          <div class="dash-ill"></div>
+        </div>
+
+        <div class="dash-card spaces" data-navigate="screen-spaces">
+          <div class="row">
+            <div class="dash-stat-label" data-text="spaces"></div>
+            <div class="arrow"></div>
+          </div>
+          <div class="row gap-3">
+            <div class="dash-sub" id="dash-num-spaces">4</div>
+            <div class="dash-sub" data-text="dash_label_spaces"></div>
+          </div>
+          <div class="dash-ill"></div>
+        </div>
+
+        <div class="dash-card calendar" data-navigate="screen-calendar">
+          <div class="row">
+            <div class="dash-stat-label" data-text="calendar"></div>
+            <div class="arrow"></div>
+          </div>
+          <div class="row gap-3">
+            <div class="dash-sub" id="dash-num-calendar">4</div>
+            <div class="dash-sub" data-text="dash_label_maintenance"></div>
+          </div>
+          <div class="dash-ill"></div>
+        </div>
+
+      </div>
+
+      <div>
+        <div class="section-label small" data-text="tasks"></div>
+
+        <div class="card list" id="dash-list"></div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+<!-- ============================================
+PROJECT LIST
+============================================ -->
+  <div class="screen" id="screen-projects">
+
+    <div class="screen-header">
+      <div class="row-center">
+        <div class="screen-title" data-text="projects"></div>
+        <div class="icon-btn" data-action="new-project">
+          <div class="svg plus"></div>
+        </div>
+      </div>
+        <div class="filter-row row-between" id="projects-filter-row">
+          <div class="filter-chip active" data-filter="all" data-text="proj_filter_all">
+          </div>
+          <div class="filter-chip" data-filter="idea"> 
+            <div class="list-dot no-margin idea"></div>
+            <span data-text="proj_filter_idea"></span>
+          </div>
+          <div class="filter-chip" data-filter="planned"> 
+            <div class="list-dot no-margin planned"></div>
+            <span data-text="proj_filter_planned"></span>
+          </div>
+          <div class="filter-chip" data-filter="progress">
+            <div class="list-dot no-margin inprogress"></div>
+            <span data-text="proj_filter_progress"></span>
+          </div>
+          <div class="filter-chip" data-filter="done"> 
+            <div class="list-dot no-margin done"></div>
+            <span data-text="proj_filter_done"></span>
+          </div>
+        </div>
+    </div>
+    <div class="list" id="projects-list"></div>
+  </div>
+
+
+<!-- ============================================
+PROJECT DETAIL  (rendered by JS — see renderProjectDetail)
+============================================ -->
+  <div class="screen" id="screen-project-detail"></div>
+
+
+<!-- ============================================
+SPACE LIST  (rendered by JS — see renderSpaces)
+============================================ -->
+  <div class="screen" id="screen-spaces">
+    <div class="screen-header">
+      <div class="row-center">
+        <div class="screen-title" data-text="spaces"></div>
+        <div class="icon-btn" data-action="add-level-from-spaces">
+          <div class="svg plus"></div>
+        </div>
+      </div>
+    </div>
+    <div class="list" id="spaces-list"></div>
+  </div>
+
+
+<!-- ============================================
+SPACE DETAIL  (rendered by JS — see renderSpaceDetail)
+============================================ -->
+  <div class="screen" id="screen-space-detail"></div>
+
+
+<!-- ============================================
+CALENDAR  (rendered by JS — see renderCalendar)
+============================================ -->
+  <div class="screen" id="screen-calendar"></div>
+
+
+<!-- ============================================
+TASK DETAIL  (rendered by JS — see renderTaskDetail)
+Used for both creating new tasks and editing existing ones.
+============================================ -->
+  <div class="screen" id="screen-task-detail"></div>
+
+</div><!-- /screens -->
+
+
+<!-- ============================================
+BOTTOM NAV — hidden during onboarding
+============================================ -->
+  <div class="bottom-nav is-hidden" id="bottom-nav">
+
+    <div class="nav-item active" id="nav-dashboard" data-navigate="screen-dashboard">
+      <div class="nav-icon dashboard">
+        <svg width="243" height="239" viewBox="0 0 243 239" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="116.101" cy="120.312" rx="96.9456" ry="57.9657" transform="rotate(-5.81625 116.101 120.312)" stroke="#2F4A3F" stroke-width="8.24" stroke-linejoin="round"/>
+          <ellipse cx="119.279" cy="121.664" rx="104.025" ry="58.3801" transform="rotate(28.6362 119.279 121.664)" stroke="#2F4A3F" stroke-width="8.24" stroke-linejoin="round"/>
+          <ellipse cx="121.245" cy="119.44" rx="111.19" ry="58.822" transform="rotate(-43.6755 121.245 119.44)" stroke="#2F4A3F" stroke-width="8.24" stroke-linejoin="round"/>
+          <ellipse cx="111.382" cy="117.255" rx="99.3838" ry="66.6032" transform="rotate(-112.375 111.382 117.255)" stroke="#2F4A3F" stroke-width="8.24" stroke-linejoin="round"/>
+          <path d="M137.549 97.27C124.413 92.0523 116.785 114.025 116.785 114.025C116.785 114.025 108.518 92.3103 96.6696 101.136C75.906 116.602 118.732 149.469 118.732 149.469C118.732 149.469 161.881 106.936 137.549 97.27Z" stroke="#C48A5A" stroke-width="8" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="nav-label" data-text="home"></div>
+      <div class="nav-dot"></div>
+    </div>
+
+    <div class="nav-item" id="nav-projects" data-navigate="screen-projects">
+      <div class="nav-icon">
+        <svg width="183" height="203" viewBox="0 0 183 203" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M166.455 5.12012H26.4552C20.5672 5.12012 15.7852 9.89708 15.7852 15.7851V186.455C15.7852 192.343 20.5621 197.12 26.4552 197.12H166.455C172.343 197.12 177.12 192.343 177.12 186.455V15.7851C177.12 9.89708 172.343 5.12012 166.455 5.12012Z" stroke="#2F4A3F" stroke-width="10.24" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M26.4552 58.455H5.12012M26.4552 101.12H5.12012M26.4552 143.785H5.12012M134.455 47.7849H69.1201V90.455H134.455V47.7849Z" stroke="#C48A5A" stroke-width="10.24" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="nav-label" data-text="projects"></div>
+    </div>
+
+    <div class="nav-item" id="nav-spaces" data-navigate="screen-spaces">
+      <div class="nav-icon">
+        <svg width="203" height="203" viewBox="0 0 203 203" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M83.4552 90.4552H40.7852V47.7852H83.4552V90.4552ZM125.785 134.455H168.455V91.7852H125.785V134.455ZM40.7852 154.455H62.1202V133.12H40.7852V154.455Z" stroke="#C48A5A" stroke-width="10.24" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M58.4552 5.12012H15.7851C12.9566 5.12012 10.2439 6.24374 8.24381 8.24381C6.24374 10.2439 5.12012 12.9566 5.12012 15.7851V58.4552M197.12 58.4552V15.7851C197.12 12.9566 195.996 10.2439 193.996 8.24381C191.996 6.24374 189.284 5.12012 186.455 5.12012H143.785M5.12012 143.785V186.455C5.12012 189.284 6.24374 191.996 8.24381 193.996C10.2439 195.996 12.9566 197.12 15.7851 197.12H58.4552M143.785 197.12H186.455C189.284 197.12 191.996 195.996 193.996 193.996C195.996 191.996 197.12 189.284 197.12 186.455V143.785" stroke="#2F4A3F" stroke-width="10.24" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="nav-label" data-text="spaces"></div>
+    </div>
+
+    <div class="nav-item" id="nav-calendar" data-navigate="screen-calendar">
+      <div class="nav-icon">
+        <svg width="203" height="203" viewBox="0 0 203 203" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.12012 79.7852V186.455C5.12012 189.284 6.24374 191.997 8.24381 193.997C10.2439 195.997 12.9566 197.12 15.7851 197.12H186.455C189.284 197.12 191.996 195.997 193.996 193.997C195.996 191.997 197.12 189.284 197.12 186.455V79.7852M5.12012 79.7852H197.12M5.12012 79.7852V37.1203C5.12012 34.2918 6.24374 31.5791 8.24381 29.579C10.2439 27.579 12.9566 26.4553 15.7851 26.4553H186.455C189.284 26.4553 191.996 27.579 193.996 29.579C195.996 31.5791 197.12 34.2918 197.12 37.1203V79.7852" stroke="#2F4A3F" stroke-width="10.24" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M143.785 5.12012V47.7851M58.4551 5.12012V47.7851" stroke="#C48A5A" stroke-width="10.24" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="nav-label" data-text="calendar"></div>
+    </div>
+
+    <!-- <div class="nav-item" id="nav-settings">
+      <div class="nav-icon">
+        <svg width="53" height="201" viewBox="0 0 53 201" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26.45 153.12C20.793 153.12 15.3676 155.367 11.3675 159.367C7.36737 163.368 5.12012 168.793 5.12012 174.45C5.12012 180.107 7.36737 185.532 11.3675 189.533C15.3676 193.533 20.793 195.78 26.45 195.78C32.1071 195.78 37.5324 193.533 41.5326 189.533C45.5327 185.532 47.78 180.107 47.78 174.45C47.78 168.793 45.5327 163.368 41.5326 159.367C37.5324 155.367 32.1071 153.12 26.45 153.12Z" stroke="#2F4A3F" stroke-width="10.24" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M26.45 5.12012C20.793 5.12012 15.3676 7.36736 11.3675 11.3675C7.36737 15.3676 5.12012 20.793 5.12012 26.45C5.12012 32.1071 7.36737 37.5324 11.3675 41.5326C15.3676 45.5327 20.793 47.78 26.45 47.78C32.1071 47.78 37.5324 45.5327 41.5326 41.5326C45.5327 37.5324 47.78 32.1071 47.78 26.45C47.78 20.793 45.5327 15.3676 41.5326 11.3675C37.5324 7.36736 32.1071 5.12012 26.45 5.12012Z" stroke="#2F4A3F" stroke-width="10.24" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M26.45 79.1201C20.793 79.1201 15.3676 81.3674 11.3675 85.3675C7.36737 89.3676 5.12012 94.793 5.12012 100.45C5.12012 106.107 7.36737 111.532 11.3675 115.533C15.3676 119.533 20.793 121.78 26.45 121.78C32.1071 121.78 37.5324 119.533 41.5326 115.533C45.5327 111.532 47.78 106.107 47.78 100.45C47.78 94.793 45.5327 89.3676 41.5326 85.3675C37.5324 81.3674 32.1071 79.1201 26.45 79.1201Z" stroke="#2F4A3F" stroke-width="10.24" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="nav-label" data-text="profile"></div>
+    </div> -->
+
+  </div>
+
+  </div><!-- /phone -->
+
+</div>
+
+</body>
+</html>
