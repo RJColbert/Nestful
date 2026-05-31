@@ -37,14 +37,14 @@
     // Asset paths for the seeded project hero images.
     // New projects (with no img key) fall back to a solid color block.
     const PROJECT_IMG_PATHS = {
-      card1: "../assets/imgs/projects/p1.jpg",
-      card2: "../assets/imgs/projects/p2.jpg",
-      card3: "../assets/imgs/projects/p3.jpg",
-      card4: "../assets/imgs/projects/p4.jpg",
-      card5: "../assets/imgs/projects/p5.jpg",
-      card6: "../assets/imgs/projects/p6.jpg",
-      card7: "../assets/imgs/projects/p7.jpg",
-      card8: "../assets/imgs/projects/p8.jpg",
+      card1: "assets/imgs/projects/p1.jpg",
+      card2: "assets/imgs/projects/p2.jpg",
+      card3: "assets/imgs/projects/p3.jpg",
+      card4: "assets/imgs/projects/p4.jpg",
+      card5: "assets/imgs/projects/p5.jpg",
+      card6: "assets/imgs/projects/p6.jpg",
+      card7: "assets/imgs/projects/p7.jpg",
+      card8: "assets/imgs/projects/p8.jpg",
     };
 
     const PROJECT_IMG_POSITIONS = {
@@ -60,24 +60,24 @@
 
     // Asset path map for area images — area name → file in /assets/imgs/areas/
     const AREA_IMG_PATHS = {
-      "bathroom":       "../assets/imgs/areas/bathroom.png",
-      "bedroom":        "../assets/imgs/areas/bedroom.png",
-      "dining room":    "../assets/imgs/areas/dining_room.png",
-      "garage":         "../assets/imgs/areas/garage.png",
-      "garage bay":     "../assets/imgs/areas/garage.png",
-      "hallway":        "../assets/imgs/areas/hallway.png",
-      "kitchen":        "../assets/imgs/areas/kitchen.png",
-      "laundry":        "../assets/imgs/areas/laundry.png",
-      "living room":    "../assets/imgs/areas/living_room.png",
-      "mudroom":        "../assets/imgs/areas/mudroom.png",
-      "office":         "../assets/imgs/areas/office.png",
-      "pantry":         "../assets/imgs/areas/pantry.png",
-      "storage":        "../assets/imgs/areas/storage.png",
-      "sunroom":        "../assets/imgs/areas/sunroom.png",
-      "walk-in closet": "../assets/imgs/areas/walkin_closet.png",
-      "workshop":       "../assets/imgs/areas/workshop.png",
+      "bathroom":       "assets/imgs/areas/bathroom.png",
+      "bedroom":        "assets/imgs/areas/bedroom.png",
+      "dining room":    "assets/imgs/areas/dining_room.png",
+      "garage":         "assets/imgs/areas/garage.png",
+      "garage bay":     "assets/imgs/areas/garage.png",
+      "hallway":        "assets/imgs/areas/hallway.png",
+      "kitchen":        "assets/imgs/areas/kitchen.png",
+      "laundry":        "assets/imgs/areas/laundry.png",
+      "living room":    "assets/imgs/areas/living_room.png",
+      "mudroom":        "assets/imgs/areas/mudroom.png",
+      "office":         "assets/imgs/areas/office.png",
+      "pantry":         "assets/imgs/areas/pantry.png",
+      "storage":        "assets/imgs/areas/storage.png",
+      "sunroom":        "assets/imgs/areas/sunroom.png",
+      "walk-in closet": "assets/imgs/areas/walkin_closet.png",
+      "workshop":       "assets/imgs/areas/workshop.png",
     };
-    const AREA_IMG_FALLBACK = "../assets/imgs/areas/other.png";
+    const AREA_IMG_FALLBACK = "assets/imgs/areas/other.png";
 
     function getAreaImagePath(name) {
       if (!name) return AREA_IMG_FALLBACK;
