@@ -62,33 +62,33 @@
    3. FONT FACES
    ============================================================= */
     /* Inter */
-      @font-face { font-family: 'FontBl';  src: url('../assets/fonts/Inter/Inter-Black.woff2') format('woff2'); }
+      @font-face { font-family: 'FontBl';  src: url('/assets/fonts/Inter/Inter-Black.woff2') format('woff2'); }
       @font-face { font-family: 'FontBlI'; src: url('../assets/fonts/Inter/Inter-BlackItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontEB';  src: url('../assets/fonts/Inter/Inter-ExtraBold.woff2') format('woff2'); }
-      @font-face { font-family: 'FontEBI'; src: url('../assets/fonts/Inter/Inter-ExtraBoldItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontB';   src: url('../assets/fonts/Inter/Inter-Bold.woff2') format('woff2'); }
-      @font-face { font-family: 'FontBI';  src: url('../assets/fonts/Inter/Inter-BoldItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontSB';  src: url('../assets/fonts/Inter/Inter-SemiBold.woff2') format('woff2'); }
-      @font-face { font-family: 'FontSBI'; src: url('../assets/fonts/Inter/Inter-SemiBoldItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontM';   src: url('../assets/fonts/Inter/Inter-Medium.woff2') format('woff2'); }
-      @font-face { font-family: 'FontMI';  src: url('../assets/fonts/Inter/Inter-MediumItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontR';   src: url('../assets/fonts/Inter/Inter-Regular.woff2') format('woff2'); }
-      @font-face { font-family: 'FontI';   src: url('../assets/fonts/Inter/Inter-Italic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontL';   src: url('../assets/fonts/Inter/Inter-Light.woff2') format('woff2'); }
-      @font-face { font-family: 'FontLI';  src: url('../assets/fonts/Inter/Inter-LightItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontEL';  src: url('../assets/fonts/Inter/Inter-ExtraLight.woff2') format('woff2'); }
-      @font-face { font-family: 'FontELI'; src: url('../assets/fonts/Inter/Inter-ExtraLightItalic.woff2') format('woff2'); }
-      @font-face { font-family: 'FontT';   src: url('../assets/fonts/Inter/Inter-Thin.woff2') format('woff2'); }
-      @font-face { font-family: 'FontTI';  src: url('../assets/fonts/Inter/Inter-ThinItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontEB';  src: url('/assets/fonts/Inter/Inter-ExtraBold.woff2') format('woff2'); }
+      @font-face { font-family: 'FontEBI'; src: url('/assets/fonts/Inter/Inter-ExtraBoldItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontB';   src: url('/assets/fonts/Inter/Inter-Bold.woff2') format('woff2'); }
+      @font-face { font-family: 'FontBI';  src: url('/assets/fonts/Inter/Inter-BoldItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontSB';  src: url('/assets/fonts/Inter/Inter-SemiBold.woff2') format('woff2'); }
+      @font-face { font-family: 'FontSBI'; src: url('/assets/fonts/Inter/Inter-SemiBoldItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontM';   src: url('/assets/fonts/Inter/Inter-Medium.woff2') format('woff2'); }
+      @font-face { font-family: 'FontMI';  src: url('/assets/fonts/Inter/Inter-MediumItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontR';   src: url('/assets/fonts/Inter/Inter-Regular.woff2') format('woff2'); }
+      @font-face { font-family: 'FontI';   src: url('/assets/fonts/Inter/Inter-Italic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontL';   src: url('/assets/fonts/Inter/Inter-Light.woff2') format('woff2'); }
+      @font-face { font-family: 'FontLI';  src: url('/assets/fonts/Inter/Inter-LightItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontEL';  src: url('/assets/fonts/Inter/Inter-ExtraLight.woff2') format('woff2'); }
+      @font-face { font-family: 'FontELI'; src: url('/assets/fonts/Inter/Inter-ExtraLightItalic.woff2') format('woff2'); }
+      @font-face { font-family: 'FontT';   src: url('/assets/fonts/Inter/Inter-Thin.woff2') format('woff2'); }
+      @font-face { font-family: 'FontTI';  src: url('/assets/fonts/Inter/Inter-ThinItalic.woff2') format('woff2'); }
 
     /* Recoleta */
-      @font-face { font-family: 'RecBl'; src: url('../assets/fonts/Recoleta/Recoleta Black.woff2') format('woff2'); }
-      @font-face { font-family: 'RecB';  src: url('../assets/fonts/Recoleta/Recoleta Bold.woff2') format('woff2'); }
-      @font-face { font-family: 'RecSB'; src: url('../assets/fonts/Recoleta/Recoleta SemiBold.woff2') format('woff2'); }
-      @font-face { font-family: 'RecM';  src: url('../assets/fonts/Recoleta/Recoleta Medium.woff2') format('woff2'); }
-      @font-face { font-family: 'RecR';  src: url('../assets/fonts/Recoleta/Recoleta Regular.woff2') format('woff2'); }
-      @font-face { font-family: 'RecL';  src: url('../assets/fonts/Recoleta/Recoleta Light.woff2') format('woff2'); }
-      @font-face { font-family: 'RecT';  src: url('../assets/fonts/Recoleta/Recoleta Thin.woff2') format('woff2'); }
+      @font-face { font-family: 'RecBl'; src: url('/assets/fonts/Recoleta/Recoleta Black.woff2') format('woff2'); }
+      @font-face { font-family: 'RecB';  src: url('/assets/fonts/Recoleta/Recoleta Bold.woff2') format('woff2'); }
+      @font-face { font-family: 'RecSB'; src: url('/assets/fonts/Recoleta/Recoleta SemiBold.woff2') format('woff2'); }
+      @font-face { font-family: 'RecM';  src: url('/assets/fonts/Recoleta/Recoleta Medium.woff2') format('woff2'); }
+      @font-face { font-family: 'RecR';  src: url('/assets/fonts/Recoleta/Recoleta Regular.woff2') format('woff2'); }
+      @font-face { font-family: 'RecL';  src: url('/assets/fonts/Recoleta/Recoleta Light.woff2') format('woff2'); }
+      @font-face { font-family: 'RecT';  src: url('/assets/fonts/Recoleta/Recoleta Thin.woff2') format('woff2'); }
 
 
 /* =============================================================
@@ -222,7 +222,7 @@
     }
 
     .app-header-icn {
-      background-image: url(/assets/imgs/logo_symbol.png);
+      background-image: url(../assets/imgs/logo_symbol.png);
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -238,8 +238,8 @@
 
     .settings-icon {
       background-color: var(--t3);
-      -webkit-mask: url(/assets/svgs/settings.svg) no-repeat center / contain;
-      mask: url(/assets/svgs/settings.svg) no-repeat center / contain;
+      -webkit-mask: url(../assets/svgs/settings.svg) no-repeat center / contain;
+      mask: url(../assets/svgs/settings.svg) no-repeat center / contain;
       background-position: center;
       background-size: 100% auto;
       background-repeat: no-repeat;
@@ -438,7 +438,7 @@
       top: -30px;
       left: 0;
       width: 100%;
-      background: url(/assets/svgs/pd_top.svg) top center / 100% auto no-repeat;
+      background: url(../assets/svgs/pd_top.svg) top center / 100% auto no-repeat;
       padding-top: 3rem;
       z-index: 2;
     }
@@ -1137,11 +1137,11 @@
       }
       .edit {
         background-color: var(--forest);
-        -webkit-mask: url(/assets/svgs/edit.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/edit.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/edit.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/edit.svg) no-repeat center / contain;
       }
       .plus {
-        background: url(/assets/svgs/plus.svg); 
+        background: url(../assets/svgs/plus.svg); 
       }
 
       .icon-btn.change-img {
@@ -1175,8 +1175,8 @@
 
       .arrow {
         background-color: var(--forest);
-        -webkit-mask: url(/assets/svgs/back_arrow.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/back_arrow.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/back_arrow.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/back_arrow.svg) no-repeat center / contain;
         background-position: center;
         background-size: 100% auto;
         background-repeat: no-repeat;
@@ -1231,8 +1231,8 @@
     /* ── standalone btns ── */
       .leave-page {
         background-color: var(--t3);
-        -webkit-mask: url(/assets/svgs/leave_app.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/leave_app.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/leave_app.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/leave_app.svg) no-repeat center / contain;
         background-position: center;
         background-size: 100% auto;
         background-repeat: no-repeat;
@@ -1244,8 +1244,8 @@
     /* ── date-field calendar picker icn ── */
       .date-field .calendar-picker-icn {
         background-color: var(--forest);
-        -webkit-mask: url(/assets/svgs/calendar.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/calendar.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/calendar.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/calendar.svg) no-repeat center / contain;
         background-position: center;
         background-size: 100% auto;
         background-repeat: no-repeat;
@@ -1330,13 +1330,13 @@
 
       .link-icon {
         background-color: var(--slate);
-        -webkit-mask: url(/assets/svgs/link.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/link.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/link.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/link.svg) no-repeat center / contain;
       }
       .link-plus {
         background-color: var(--t3);
-        -webkit-mask: url(/assets/svgs/plus.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/plus.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/plus.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/plus.svg) no-repeat center / contain;
       }
       .link-icon,
       .link-plus {
@@ -1427,8 +1427,8 @@
       }
 
       .copy-icon {
-        -webkit-mask: url(/assets/svgs/copy.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/copy.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/copy.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/copy.svg) no-repeat center / contain;
       }
       .link-action .svg.leave-page,
       .copy-icon {
@@ -1586,8 +1586,8 @@
         width: 10px; 
         height: 10px; 
         background-color: var(--forest);
-        -webkit-mask: url(/assets/svgs/edit.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/edit.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/edit.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/edit.svg) no-repeat center / contain;
       }
       .linking-done { 
         color: var(--sage);
@@ -1663,8 +1663,8 @@
 
       .list-dot.inprogress {
         background-color: var(--green);
-        -webkit-mask: url(/assets/svgs/status/in_progress.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/status/in_progress.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/status/in_progress.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/status/in_progress.svg) no-repeat center / contain;
         -webkit-transform-origin: center;
             -ms-transform-origin: center;
                 transform-origin: center; 
@@ -1685,8 +1685,8 @@
 
       .list-dot.planned {
         background-color: var(--pillar-spaces);  
-        -webkit-mask: url(/assets/svgs/status/planned.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/status/planned.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/status/planned.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/status/planned.svg) no-repeat center / contain;
         -webkit-animation: fade 8s ease-in-out infinite;
                 animation: fade 8s ease-in-out infinite;
       }
@@ -1696,15 +1696,15 @@
       }
       .list-dot.done { 
         background-color: var(--t3);
-        -webkit-mask: url(/assets/svgs/status/done.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/status/done.svg) no-repeat center / contain; 
+        -webkit-mask: url(../assets/svgs/status/done.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/status/done.svg) no-repeat center / contain; 
         -webkit-animation: fade 8s ease-in-out infinite; 
                 animation: fade 8s ease-in-out infinite;
       }
       .list-dot.upcoming { 
         background-color: var(--upcoming);
-        -webkit-mask: url(/assets/svgs/status/upcoming.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/status/upcoming.svg) no-repeat center / contain; 
+        -webkit-mask: url(../assets/svgs/status/upcoming.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/status/upcoming.svg) no-repeat center / contain; 
         -webkit-transform-origin: center; 
             -ms-transform-origin: center; 
                 transform-origin: center; 
@@ -1713,8 +1713,8 @@
       }
       .list-dot.ai_suggested { 
         background-color: var(--clay); 
-        -webkit-mask: url(/assets/svgs/status/ai_suggested.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/status/ai_suggested.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/status/ai_suggested.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/status/ai_suggested.svg) no-repeat center / contain;
         -webkit-animation: sm_pulse 8s ease-in-out infinite;
                 animation: sm_pulse 8s ease-in-out infinite;
       }
@@ -1727,8 +1727,8 @@
         background-size: 100% auto;
         background-repeat: no-repeat;
         background-color: var(--white); 
-        -webkit-mask: url(/assets/svgs/status/ai_suggested.svg) no-repeat center / contain;
-        mask: url(/assets/svgs/status/ai_suggested.svg) no-repeat center / contain;
+        -webkit-mask: url(../assets/svgs/status/ai_suggested.svg) no-repeat center / contain;
+        mask: url(../assets/svgs/status/ai_suggested.svg) no-repeat center / contain;
         -webkit-animation: sm_pulse 8s ease-in-out infinite;
                 animation: sm_pulse 8s ease-in-out infinite;
       }
@@ -2107,7 +2107,7 @@
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
       background-repeat: no-repeat;
-      background-image: url(/assets/imgs/ob/plant_2.png);
+      background-image: url(../assets/imgs/ob/plant_2.png);
       background-position: 108% 98%;
       background-size: 45%;
       height: 68%;
@@ -2135,7 +2135,7 @@
 
     /* Welcome screen (step 1) */
     .ob-logo-wrap {
-      background-image: url('/assets/imgs/ob/welcome.jpg');
+      background-image: url('../assets/imgs/ob/welcome.jpg');
       background-size: 125%;
       background-position: 10% 220%;
       background-repeat: no-repeat;
@@ -2172,7 +2172,7 @@
       top: -48px;
       left: 0;
       width: 110%;
-      background: url('/assets/svgs/welcome_top.svg') top center / 100% auto no-repeat;
+      background: url('../assets/svgs/welcome_top.svg') top center / 100% auto no-repeat;
       padding-top: 3rem;
     }
 
@@ -2180,7 +2180,7 @@
       width: 100%;
       height: 167px;
       margin-bottom: 26px;
-      background-image: url('/assets/imgs/ob/logo.png');
+      background-image: url('../assets/imgs/ob/logo.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -2473,18 +2473,18 @@
 
     .dash-card.projects {
       background-color: var(--projects);
-      -webkit-mask: url(/assets/svgs/db/projects_sq.svg) no-repeat center / contain;
-      mask: url(/assets/svgs/db/projects_sq.svg) no-repeat center / contain;
+      -webkit-mask: url(../assets/svgs/db/projects_sq.svg) no-repeat center / contain;
+      mask: url(../assets/svgs/db/projects_sq.svg) no-repeat center / contain;
     }
     .dash-card.spaces {
       background-color: var(--spaces);
-      -webkit-mask: url(/assets/svgs/db/spaces_sq.svg) no-repeat center / contain;
-      mask: url(/assets/svgs/db/spaces_sq.svg) no-repeat center / contain;
+      -webkit-mask: url(../assets/svgs/db/spaces_sq.svg) no-repeat center / contain;
+      mask: url(../assets/svgs/db/spaces_sq.svg) no-repeat center / contain;
     }
     .dash-card.calendar {
       background-color: var(--tasks);
-      -webkit-mask: url(/assets/svgs/db/tasks_sq.svg) no-repeat center / contain;
-      mask: url(/assets/svgs/db/tasks_sq.svg) no-repeat center / contain;
+      -webkit-mask: url(../assets/svgs/db/tasks_sq.svg) no-repeat center / contain;
+      mask: url(../assets/svgs/db/tasks_sq.svg) no-repeat center / contain;
     }
 
     .dash-ill {
@@ -2498,19 +2498,19 @@
       right: 10px;
     }
     .dash-card.projects .dash-ill {
-      background-image: url(/assets/imgs/db/icn_projects.png);
+      background-image: url(../assets/imgs/db/icn_projects.png);
     }
     .dash-card.spaces .dash-ill {
-      background-image: url(/assets/imgs/db/icn_spaces.png); 
+      background-image: url(../assets/imgs/db/icn_spaces.png); 
       height: 72px;
     }
     .dash-card.calendar .dash-ill {
-     background-image: url(/assets/imgs/db/icn_calendar.png); 
+     background-image: url(../assets/imgs/db/icn_calendar.png); 
      width: 62px;
     }
 
     .dash-img {
-      background-image: url(/assets/imgs/db/bird_circles.png);
+      background-image: url(../assets/imgs/db/bird_circles.png);
       background-repeat: no-repeat;
       background-position: -580% 50%;
       background-size: 99%;
@@ -2577,32 +2577,32 @@
     }
 
     .card1 {
-      background-image: url(/assets/imgs/projects/p1.jpg);
+      background-image: url(../assets/imgs/projects/p1.jpg);
     }
     .card2{
-      background-image: url(/assets/imgs/projects/p2.jpg.webp);
+      background-image: url(../assets/imgs/projects/p2.jpg);
       background-position: 50% 100%;
       background-size: 130%;
     }
     .card3{
-      background-image: url(/assets/imgs/projects/p3.jpg);
+      background-image: url(../assets/imgs/projects/p3.jpg);
       background-position: 50% 40%;
     }
     .card4{
-      background-image: url(/assets/imgs/projects/p4.jpg);
+      background-image: url(../assets/imgs/projects/p4.jpg);
       background-position: 50% 70%;
     }
     .card5 { 
-      background-image: url(/assets/imgs/projects/p5.jpg); 
+      background-image: url(../assets/imgs/projects/p5.jpg); 
     }
     .card6 { 
-      background-image: url(/assets/imgs/projects/p6.jpg);
+      background-image: url(../assets/imgs/projects/p6.jpg);
     }
     .card7 { 
-      background-image: url(/assets/imgs/projects/p7.jpg);
+      background-image: url(../assets/imgs/projects/p7.jpg);
     }
     .card8 { 
-      background-image: url(/assets/imgs/projects/p8.jpg);
+      background-image: url(../assets/imgs/projects/p8.jpg);
     }
 
 
@@ -2880,39 +2880,39 @@
         border-color: var(--white);
       }
       .img-picker-thumb.card1 { 
-        background-image: url(/assets/imgs/projects/p1.jpg); 
+        background-image: url(../assets/imgs/projects/p1.jpg); 
         border-radius: 34px 28px 24px 36px;
       }
       .img-picker-thumb.card2 { 
-        background-image: url(/assets/imgs/projects/p2.jpg.webp); 
+        background-image: url(../assets/imgs/projects/p2.jpg); 
         background-position: 60% 90%;
         background-size: 150%;
         border-radius: 26px 20px 31px 22px;
       }
       .img-picker-thumb.card3 { 
-        background-image: url(/assets/imgs/projects/p3.jpg);
+        background-image: url(../assets/imgs/projects/p3.jpg);
         background-position: 50% 40%; 
         border-radius: 24px 31px 22px 32px; 
       }
       .img-picker-thumb.card4 { 
-        background-image: url(/assets/imgs/projects/p4.jpg);
+        background-image: url(../assets/imgs/projects/p4.jpg);
         background-position: 50% 70%; 
         border-radius: 28px 22px 36px 26px;
       }
       .img-picker-thumb.card5 { 
-        background-image: url(/assets/imgs/projects/p5.jpg);
+        background-image: url(../assets/imgs/projects/p5.jpg);
         border-radius: 30px 24px 34px 22px; 
       }
       .img-picker-thumb.card6 { 
-        background-image: url(/assets/imgs/projects/p6.jpg); 
+        background-image: url(../assets/imgs/projects/p6.jpg); 
         border-radius: 22px 32px 26px 30px;
       }
       .img-picker-thumb.card7 { 
-        background-image: url(/assets/imgs/projects/p7.jpg);
+        background-image: url(../assets/imgs/projects/p7.jpg);
         border-radius: 36px 26px 30px 24px;  
       }
       .img-picker-thumb.card8 { 
-        background-image: url(/assets/imgs/projects/p8.jpg); 
+        background-image: url(../assets/imgs/projects/p8.jpg); 
         border-radius: 24px 34px 22px 28px; 
       }
 
@@ -3275,7 +3275,7 @@
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-        background-image: url(/assets/imgs/heart.png);
+        background-image: url(../assets/imgs/heart.png);
       }
 
       /* Month list — flat, rows handle their own padding */
