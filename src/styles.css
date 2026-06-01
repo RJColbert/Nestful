@@ -2136,8 +2136,10 @@
     /* Welcome screen (step 1) */
     .ob-logo-wrap {
       background-image: url('../assets/imgs/ob/welcome.jpg');
-      background-size: 125%;
-      background-position: 10% 220%;
+      /*background-size: 125%;
+      background-position: 10% 220%;*/
+      background-size: 105%;
+      background-position: 0% -94%;
       background-repeat: no-repeat;
       top: 0 !important;
       height: 100%;
