@@ -96,7 +96,8 @@
    ============================================================= */
     body {
       font-family: FontR;
-      background: var(--light);
+      /*background: var(--light);*/
+      background: transparent;
       color: var(--slate);
       min-height: 100vh;
       display: -webkit-box;
