@@ -137,9 +137,9 @@ const content = {
     ob7_remind_none:       "No suggestions on tasks",
     ob7_remind_none_sub:   "Turn off suggestions.",
     ob7_label_cal:         "Calendar",
-    ob7_cal_dedicated:     "Dedicated Home OS calendar",
+    ob7_cal_dedicated:     "Dedicated Nestful calendar",
     ob7_cal_dedicated_sub: "Create a separate calendar just for home tasks.",
-    ob7_cal_google:        "Merge into Google Calendar",
+    ob7_cal_google:        "Merge into an existing calendar",
     ob7_cal_google_sub:    "Add tasks to a calendar I already use.",
     ob7_cta:               "Let's go \u2192",
 
