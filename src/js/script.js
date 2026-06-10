@@ -431,8 +431,30 @@
     let navHistory = [];
     let currentScreen = null;
 
+    //google analytics - GA HELPER
+    function trackEvent(eventName, params = {}) { //google analytics
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, params);
+      }
+    }
+    function trackScreenView(screen) { //google analytics
+      trackEvent('screen_view', {
+        screen_name: screen
+      });
+    }
+
+    function trackOnboardingView(step) {  //google analytics
+      trackEvent('onboarding_view', {
+        step_number: step,
+        step_name: 'ob_' + step
+      });
+    }
+
     // Re-render destination if it has a renderer
     function rerenderScreen(id) {
+
+      trackScreenView(id); //tracks google analytics with above function
+
       if (id === 'screen-dashboard')      renderDashboard();
       if (id === 'screen-projects')       renderProjects();
       if (id === 'screen-project-detail') renderProjectDetail();
@@ -517,6 +539,17 @@
     }
 
     function initOB() {
+      trackEvent('prototype_loaded'); //google analytics
+      trackOnboardingView(1); //google analytics
+
+      setTimeout(() => { //google analytics
+          trackEvent('engaged_30_seconds');
+        }, 30000);
+
+      setTimeout(() => { //google analytics
+          trackEvent('engaged_2_minutes');
+        }, 120000);
+
       updateObPips(1);
       updateObFooter(1);
     }
@@ -539,6 +572,8 @@
       updateObHeader(toStep);
       updateObPips(toStep);
       updateObFooter(toStep);
+
+      trackOnboardingView(toStep);  //google analytics
     }
 
     function updateObHeader(step) {
@@ -1325,6 +1360,13 @@
     let projectEditMode = true;
 
     function openProject(projectId) {
+
+      const project = state.projects.find(p => p.id === projectId); //google analytics
+      trackEvent('open_project', { //google analytics
+        project_id: projectId,
+        project_name: project ? project.title : ''
+      });
+
       state.currentProjectId = projectId;
       projectEditMode = true;
       navigate('screen-project-detail');
@@ -2178,6 +2220,11 @@
     let spaceEditMode = true;
 
     function openSpace(roomName, editMode = true) {
+
+      trackEvent('open_space', { //google analytics
+        space_name: roomName
+      });
+
       state.currentSpaceName = roomName;
       spaceEditMode = true;
       navigate('screen-space-detail');
@@ -2876,12 +2923,26 @@
    TASK DETAIL — sub-screen used for both edit and create
    ============================================================ */
     function openTask(taskId) {
+
+      const task = state.tasks.find(t => t.id === taskId); //google analytics
+      trackEvent('open_task', { //google analytics
+        task_id: taskId,
+        task_name: task ? task.title : ''
+      });
+
       state.currentTaskId = taskId;
       state.taskDetailMode = 'edit';
       navigate('screen-task-detail');
     }
 
     function openSuggestion(suggId) {
+      
+      const suggestion = state.suggestions.find(s => s.id === suggId); //google analytics
+      trackEvent('open_suggestion', { //google analytics
+        suggestion_id: suggId,
+        suggestion_name: suggestion ? suggestion.title : ''
+      });
+
       state.currentSuggestionId = suggId;
       state.taskDetailMode = 'suggestion';
       navigate('screen-task-detail');
