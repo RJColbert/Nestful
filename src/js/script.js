@@ -850,7 +850,7 @@
       subEl.textContent   = config.sub || '';
       subEl.style.display = config.sub ? '' : 'none';
       body.innerHTML      = '';
-      body.classList.remove('chip-grid');
+      body.classList.remove('chip-grid', 'action-list');
       footer.innerHTML    = '';
 
       if (typeof config.renderBody === 'function') config.renderBody(body);
