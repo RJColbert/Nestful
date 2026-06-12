@@ -850,6 +850,7 @@
       subEl.textContent   = config.sub || '';
       subEl.style.display = config.sub ? '' : 'none';
       body.innerHTML      = '';
+      body.classList.remove('chip-grid');
       footer.innerHTML    = '';
 
       if (typeof config.renderBody === 'function') config.renderBody(body);
@@ -3061,8 +3062,6 @@
 
       // Set initial chip selections
       const recurRow = body.querySelector('#task-recur-row');
-      // const projRow  = body.querySelector('#task-proj-row');
-      // const areaRow = body.querySelector('#task-area-row');
 
       recurRow.querySelectorAll('.picker-chip').forEach(c =>
         c.classList.toggle('selected', c.dataset.recur === t.recurrence));
@@ -3071,22 +3070,6 @@
           recurRow.querySelectorAll('.picker-chip').forEach(x => x.classList.remove('selected'));
           c.classList.add('selected');
         }));
-
-      // projRow.querySelectorAll('.picker-chip').forEach(c =>
-      //   c.classList.toggle('selected', c.dataset.proj === (t.project || '')));
-      // projRow.querySelectorAll('.picker-chip').forEach(c =>
-      //   c.addEventListener('click', () => {
-      //     projRow.querySelectorAll('.picker-chip').forEach(x => x.classList.remove('selected'));
-      //     c.classList.add('selected');
-      //   }));
-
-      // areaRow.querySelectorAll('.picker-chip').forEach(c =>
-      //   c.classList.toggle('selected', c.dataset.area === (t.area || '')));
-      // areaRow.querySelectorAll('.picker-chip').forEach(c =>
-      //   c.addEventListener('click', () => {
-      //     areaRow.querySelectorAll('.picker-chip').forEach(x => x.classList.remove('selected'));
-      //     c.classList.add('selected');
-      //   }));
 
       // Delete / dismiss at the bottom
       if (state.taskDetailMode === 'edit') {
