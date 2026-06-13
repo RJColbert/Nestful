@@ -2202,6 +2202,7 @@
       color: var(--slate);
       line-height: 1.55;
       font-family: FontM;
+      width: 90%;
     }
 
     /* Body screens (steps 2–7) */
