@@ -25,11 +25,11 @@ const content = {
 
   // ── OB-1: WELCOME ─────────────────────────────────────────
     ob1_tagline:     "Your home, all in one place",
-    ob1_tagline_sub: "Projects, spaces, maintenance, yard and garden — all in sync.",
+    ob1_tagline_sub: "Projects, spaces, tasks, yard and garden, all in sync.",
     ob1_cta:         "Get started",
     ob1_signin:      "Already have an account? Sign in",
     si_signin:       "Sign in",
-    si_welcome:      "Welcome back — sign in to your account",
+    si_welcome:      "Welcome back. Sign in to your account",
 
 
   // ── OB-2: HOME NAME, TYPE & LOCATION ──────────────────────
@@ -118,7 +118,7 @@ const content = {
     ob6_label:                  "Interests",
     ob6_focus_projects:         "Active projects",
     ob6_focus_projects_desc:    "Track progress, instructions, and materials for home improvement projects.",
-    ob6_focus_maintenance:      "Maintenance",
+    ob6_focus_maintenance:      "Tasks",
     ob6_focus_maintenance_desc: "Stay on top of recurring tasks, seasonal chores, and appliance care.",
     ob6_focus_garden:           "Garden & lawn",
     ob6_focus_garden_desc:      "Track plants, planting dates, and seasonal care across years.",
@@ -129,9 +129,9 @@ const content = {
   // ── OB-7: CALENDAR PREFERENCES ────────────────────────────
     ob7_title:             "Calendar preferences",
     ob7_sub:               "How would you like to organize suggestions?",
-    ob7_label_remind:      "AI maintenance suggestions",
+    ob7_label_remind:      "AI task suggestions",
     ob7_remind_all:        "All tasks",
-    ob7_remind_all_sub:    "Get suggestions for all seasonal and recurring maintenance.",
+    ob7_remind_all_sub:    "Get suggestions for all seasonal and recurring tasks.",
     ob7_remind_less:       "Less common tasks only",
     ob7_remind_less_sub:   "Only get suggestions for tasks I might forget.",
     ob7_remind_none:       "No suggestions on tasks",
