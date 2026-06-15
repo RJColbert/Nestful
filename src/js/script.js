@@ -1088,7 +1088,7 @@
 
       openPicker({
         kind: 'rename-room',
-        title: 'Rename area',
+        title: 'Rename space',
         sub: '',
         renderBody: (body) => {
           const input = document.createElement('input');
@@ -2290,7 +2290,7 @@
       if (spaceEditMode) {
         const deleteBlock = document.createElement('div');
         deleteBlock.className = 'project-delete-block';
-        deleteBlock.innerHTML = `<button class="action-row destructive" data-action="ask-delete-area">Delete area</button>`;
+        deleteBlock.innerHTML = `<button class="action-row destructive" data-action="ask-delete-area">Delete space</button>`;
         body.appendChild(deleteBlock);
       }
 
@@ -2655,7 +2655,7 @@
     function askDeleteArea() {
       openPicker({
         kind: 'confirm-delete-area',
-        title: 'Delete this area?',
+        title: 'Delete this space?',
         sub:   "This can't be undone.",
         renderFooter: (footer) => {
           footer.innerHTML = `
