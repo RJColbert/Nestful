@@ -3075,7 +3075,7 @@
       if (state.taskDetailMode === 'edit') {
         const delWrap = document.createElement('div');
         delWrap.className = 'project-delete-block';
-        delWrap.innerHTML = `<button class="action-row destructive" data-action="ask-delete-task">${content.delete_btn}</button>`;
+        delWrap.innerHTML = `<button class="action-row destructive" data-action="ask-delete-task">Delete task</button>`;
         body.appendChild(delWrap);
       }
       if (state.taskDetailMode === 'suggestion') {
