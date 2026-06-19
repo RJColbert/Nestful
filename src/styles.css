@@ -109,7 +109,7 @@
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
-      padding: 40px 20px;
+/*      padding: 40px 20px;*/
     }
 
     .prototype-wrap {
@@ -131,8 +131,10 @@
       height: 812px;
       background: var(--light);
       border-radius: 44px;
-      -webkit-box-shadow: 0 0 0 10px var(--phone), 0 0 0 12px #3A3A38, 0 30px 80px rgba(0, 0, 0, 0.4);
-              box-shadow: 0 0 0 10px var(--phone), 0 0 0 12px #3A3A38, 0 30px 80px rgba(0, 0, 0, 0.4);
+      /*-webkit-box-shadow: 0 0 0 10px var(--phone), 0 0 0 12px #3A3A38, 0 30px 80px rgba(0, 0, 0, 0.4);
+              box-shadow: 0 0 0 10px var(--phone), 0 0 0 12px #3A3A38, 0 30px 80px rgba(0, 0, 0, 0.4);*/
+      -webkit-box-shadow: 0 0 0 10px var(--phone), 0 0 0 12px #3A3A38;
+              box-shadow: 0 0 0 10px var(--phone), 0 0 0 12px #3A3A38;
       overflow: hidden;
       position: relative;
       display: -webkit-box;
