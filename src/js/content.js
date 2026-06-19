@@ -29,7 +29,8 @@ const content = {
     ob1_cta:         "Get started",
     ob1_signin:      "Already have an account? Sign in",
     si_signin:       "Sign in",
-    si_welcome:      "Welcome back. Sign in to your account",
+    si_signin_Alba:  "Welcome back, Alba",
+    si_welcome:      "Sign in to pick up where you left off",
 
 
   // ── OB-2: HOME NAME, TYPE & LOCATION ──────────────────────
@@ -176,11 +177,9 @@ const content = {
     proj_detail_steps:     "Instructions",
     proj_detail_materials: "Materials list",
     proj_detail_refs:      "Reference links",
-    // proj_detail_space:     "Linked spaces",
 
     new_proj_title_lbl:   "Project title",
     new_proj_status_lbl:  "Status",
-    // new_proj_tags_lbl:    "Tags",
     new_proj_create_btn:  "Create project",
     new_proj_sheet_title: "New project",
     new_proj_sheet_sub:   "Quick details — fill in instructions and materials next.",
@@ -189,8 +188,6 @@ const content = {
     confirm_delete_proj_sub:   "This can't be undone.",
     confirm_delete_task_title: "Delete this task?",
     confirm_delete_task_sub:   "This can't be undone.",
-
-    // spaces_in_project: "Linked projects",
 
 
   // ── TASKS ─────────────────────────────────────────────────
@@ -467,17 +464,26 @@ const content = {
     };
 
     const SEED_TASKS = [
-      { id: "t1", title: "Replace HVAC filter",       dateValue: "2026-04-12",  projects: [], recurrence: "annual",  notes: "Use MERV 11 or higher", status: "overdue",  areas: [] },
-      { id: "t2", title: "Test smoke detectors",       dateValue: "2026-04-18",   projects: [], recurrence: "oneoff",    notes: "", status: "overdue",  areas: [] },
-      { id: "t3", title: "Clean gutters",              dateValue: "2026-05-22",  projects: [], recurrence: "annual",  notes: "Check downspouts too", status: "upcoming", areas: [] },
-      { id: "t4", title: "Service lawn mower",         dateValue: "2026-05-28",    projects: [], recurrence: "annual",  notes: "", status: "upcoming", areas: [] },
-      { id: "t5", title: "Deep clean kitchen",         dateValue: "2026-03-30", projects: [], recurrence: "oneoff",    notes: "", status: "done",     areas: ["Kitchen"] },
+      { id: "t1", title: "Replace HVAC filter",       dateValue: "2026-04-12",  projects: [], recurrence: "annual",  notes: "Use MERV 11 or higher", refs: [], status: "overdue",  areas: [] },
+      { id: "t2", title: "Test smoke detectors",       dateValue: "2026-04-18",   projects: [], recurrence: "oneoff",    notes: "", refs: [], status: "overdue",  areas: [] },
+      { id: "t3", title: "Clean gutters",              dateValue: "2026-05-22",  projects: [], recurrence: "annual",  notes: "Check downspouts too", refs: [], status: "upcoming", areas: [] },
+      { id: "t4", title: "Service lawn mower",         dateValue: "2026-05-28",    projects: [], recurrence: "annual",  notes: "", refs: [], status: "upcoming", areas: [] },
+      { id: "t5", title: "Deep clean kitchen",         dateValue: "2026-03-30", projects: [], recurrence: "oneoff",    notes: "", refs: [], status: "done",     areas: ["Kitchen"] },
     ];
 
     const SEED_SUGGESTIONS = [
-      { id: "s1", title: "Flush water heater",   dateValue: "2026-05-15", desc: "Sediment buildup reduces efficiency. Annual flush recommended.", recurrence: "annual", projects: [], areas: [] },
-      { id: "s2", title: "Reseal deck",          dateValue: "2026-06-02", desc: "Last sealed 2 years ago. Best done in dry weather.",            recurrence: "annual", projects: [], areas: [] },
-      { id: "s3", title: "Replace fridge filter", dateValue: "2026-05-20", desc: "6-month replacement cycle is due.",                            recurrence: "monthly", projects: [], areas: ["Kitchen"] },
+      { id: "s1", title: "Flush water heater",   dateValue: "2026-05-15", desc: "Sediment buildup reduces efficiency. Annual flush recommended.", recurrence: "annual", notes: "Sediment buildup at the bottom of the tank reduces heating efficiency and can shorten the life of the unit. A yearly flush keeps energy bills lower and extends the lifespan by a few years on average.", refs: [{ id: "s1r1", title: "How to flush a water heater — step by step", link: "familyhandyman.com" }, { id: "s1r2", title: "Signs your water heater needs maintenance", link: "thisoldhouse.com" }, ], projects: [], areas: [] },
+
+      { id: "s2", title: "Reseal deck", dateValue: "2026-06-02", desc: "Last sealed 2 years ago. Best done in dry weather.", recurrence: "annual", notes: "Deck sealer typically lasts 2 to 3 years depending on sun exposure and foot traffic. Best applied on a dry day with at least 48 hours of clear weather ahead so the sealer cures fully.", 
+    refs: [
+      { id: "s2r1", title: "How to clean and reseal a wood deck", link: "bobvila.com" },
+      { id: "s2r2", title: "Best deck sealers for 2026", link: "thisoldhouse.com" },
+    ], projects: [], areas: [] },
+
+      { id: "s3", title: "Replace fridge filter", dateValue: "2026-05-20", desc: "6-month replacement cycle is due.", recurrence: "monthly", notes: "Most refrigerator water filters are rated for 6 months or 200 gallons, whichever comes first. Check the model number on the existing filter before ordering a replacement.", 
+    refs: [
+      { id: "s3r1", title: "Find the right replacement filter by model", link: "filtersfast.com" },
+    ], projects: [], areas: ["Kitchen"] },
     ];
 
     // the amount doesn't matter just add more if want or switch them out

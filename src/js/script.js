@@ -1778,6 +1778,7 @@
           url: r.link || '',
           fieldId: 'ref-link-' + r.id,
           onSave: (newUrl) => {
+            captureProjectEdits();
             const ref = p.refs.find(x => x.id === r.id);
             if (ref) ref.link = newUrl;
           },
@@ -1960,6 +1961,23 @@
       captureProjectEdits();
       p.refs = p.refs.filter(r => r.id !== refId);
       renderProjectDetail();
+    }
+
+    function addTaskRef() {
+      const t = getCurrentTask();
+      if (!t) return;
+      captureTaskEdits();
+      if (!t.refs) t.refs = [];
+      t.refs.push({ id: uid('tr'), title: '', link: '' });
+      renderTaskDetail();
+    }
+
+    function removeTaskRef(refId) {
+      const t = getCurrentTask();
+      if (!t) return;
+      captureTaskEdits();
+      t.refs = t.refs.filter(r => r.id !== refId);
+      renderTaskDetail();
     }
 
     function askDeleteProject() {
@@ -3057,6 +3075,7 @@
       contentLayer.appendChild(body);
 
       // Linked projects + spaces (multi-select, shared component)
+      body.appendChild(renderTaskRefs(t));
       body.appendChild(renderTaskLinkedProjects(t));
       body.appendChild(renderTaskLinkedSpaces(t));
 
@@ -3217,6 +3236,77 @@
       });
     }
 
+    function renderTaskRefs(t) {
+      const wrap = document.createElement('div');
+      wrap.innerHTML = `<div class="section-label small">${content.proj_detail_refs}</div>`;
+
+      const card = document.createElement('div');
+      card.className = 'card list';
+
+      // Ensure refs array exists (older data may not have it)
+      if (!t.refs) t.refs = [];
+
+      t.refs.forEach((r, idx) => {
+        const row = document.createElement('div');
+        row.className = 'ref-link';
+        row.dataset.refId = r.id;
+
+        const col = document.createElement('div');
+        col.className = 'col gap-6 flex-1';
+
+        // Title
+        const titleEl = document.createElement('div');
+        titleEl.className = 'ref-title';
+        titleEl.contentEditable = 'true';
+        titleEl.spellcheck = false;
+        titleEl.dataset.editField = 'task-ref-title';
+        titleEl.dataset.refId = r.id;
+        titleEl.dataset.placeholder = 'Reference title';
+        titleEl.textContent = r.title || '';
+        col.appendChild(titleEl);
+
+        // Link sub-row (shared link-field component)
+        const subRow = document.createElement('div');
+        subRow.className = 'ref-sub-row';
+        renderLinkField(subRow, {
+          url: r.link || '',
+          fieldId: 'task-ref-link-' + r.id,
+          onSave: (newUrl) => {
+            captureTaskRefTitles();  // captures ref titles before re-render
+            const ref = t.refs.find(x => x.id === r.id);
+            if (ref) ref.link = newUrl;
+          },
+        });
+        col.appendChild(subRow);
+
+        row.appendChild(col);
+
+        const remove = document.createElement('div');
+        remove.className = 'edit-remove';
+        remove.dataset.action = 'remove-task-ref';
+        remove.dataset.refId = r.id;
+        remove.innerHTML = '&times;';
+        row.appendChild(remove);
+
+        card.appendChild(row);
+
+        if (idx < t.refs.length - 1) {
+          const div = document.createElement('div');
+          div.className = 'floor-divider';
+          card.appendChild(div);
+        }
+      });
+
+      const addBtn = document.createElement('div');
+      addBtn.className = 'edit-add-row';
+      addBtn.dataset.action = 'add-task-ref';
+      addBtn.textContent = '+ Add reference link';
+      card.appendChild(addBtn);
+
+      wrap.appendChild(card);
+      return wrap;
+    }
+
     function getDismissLabel() {
       const s = getCurrentTask();  // in suggestion mode this returns the suggestion
       if (s && s.recurrence && s.recurrence !== 'none') {
@@ -3247,6 +3337,7 @@
         projects: s.projects ? [...s.projects] : [],
         recurrence,
         notes,
+        refs: s.refs ? [...s.refs] : [],
         status: 'upcoming',
         areas: s.areas ? [...s.areas] : [],
       });
@@ -3291,8 +3382,30 @@
       const notesEl = document.getElementById('task-notes');
       if (notesEl) t.notes = notesEl.value.trim();
       t.recurrence = document.querySelector('#task-recur-row .picker-chip.selected')?.dataset.recur || t.recurrence;
+
+      // Capture ref title edits
+      document.querySelectorAll('#screen-task-detail [data-edit-field="task-ref-title"]').forEach(el => {
+        const r = t.refs?.find(r => r.id === el.dataset.refId);
+        if (r) r.title = el.textContent.trim();
+      });
+
       // Don't delete _draft flag during in-screen captures; only on exit
       if (allowPrune) delete t._draft;
+    }
+
+    function captureTaskRefTitles() {
+      // Captures ref title edits for both regular tasks and suggestions.
+      // Runs independently of captureTaskEdits (which exits early for suggestions).
+      const isSuggestion = state.taskDetailMode === 'suggestion';
+      const source = isSuggestion
+        ? state.suggestions.find(x => x.id === state.currentSuggestionId)
+        : getCurrentTask();
+      if (!source || !source.refs) return;
+
+      document.querySelectorAll('#screen-task-detail [data-edit-field="task-ref-title"]').forEach(el => {
+        const r = source.refs.find(r => r.id === el.dataset.refId);
+        if (r) r.title = el.textContent.trim();
+      });
     }
 
     function askDeleteTask() {
@@ -3450,6 +3563,8 @@
       if ((el = t.closest('[data-action="remove-material"]'))) { removeMaterial(el.dataset.materialId); return; }
       if (t.closest('[data-action="add-ref"]'))              { addRef(); return; }
       if ((el = t.closest('[data-action="remove-ref"]')))    { removeRef(el.dataset.refId); return; }
+      if (t.closest('[data-action="add-task-ref"]'))              { addTaskRef(); return; }
+      if ((el = t.closest('[data-action="remove-task-ref"]')))    { removeTaskRef(el.dataset.refId); return; }
       if (t.closest('[data-action="edit-project-image"]')) { openProjectImagePicker(); return; }
       if (t.closest('[data-action="ask-delete-project"]'))   { askDeleteProject(); return; }
       if (t.closest('[data-action="confirm-delete-project"]')){ confirmDeleteProject(); return; }
@@ -3563,8 +3678,15 @@
       if (ev.target.matches('#screen-space-detail [data-edit-field]')) {
         captureSpaceEdits();
       }
+      // if (ev.target.matches('#screen-task-detail #task-title-editable') ||
+      //     ev.target.matches('#screen-task-detail [data-edit-field]')) {
+      //   captureTaskEdits(false);
+      // }
       if (ev.target.matches('#screen-task-detail #task-title-editable')) {
         captureTaskEdits(false);
+      }
+      if (ev.target.matches('#screen-task-detail [data-edit-field="task-ref-title"]')) {
+        captureTaskRefTitles();
       }
     }, true);
 
