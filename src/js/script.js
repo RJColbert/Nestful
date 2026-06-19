@@ -611,6 +611,7 @@
         nextBtn.textContent = getObCta(step);
         nextBtn.disabled = false;
         nextBtn.classList.remove('ob-disabled');
+        nextBtn.classList.toggle('pulse', step === 1);
       }
       if (secondaryLink) {
         secondaryLink.textContent    = '';
